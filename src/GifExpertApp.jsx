@@ -3,7 +3,7 @@ import { AddCategory } from './componets/AddCategory';
 import { GifGrid } from './componets/GifGrid';
 
 export const GifExpertApp = () => {
-    const [categories, setCategories] = useState(['One Punch', 'Naruto']);
+    const [categories, setCategories] = useState(['One Punch']);
 
     const onAddCategory = (newCategory) => {
         if (categories.includes(newCategory)) return;
@@ -19,7 +19,7 @@ export const GifExpertApp = () => {
             {categories.map((category) => (
                 <GifGrid
                     category={category}
-                    key={`${category}-${Math.random() * 100}`}
+                    key={category}
                 />
             ))}
         </>
