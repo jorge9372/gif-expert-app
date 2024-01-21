@@ -24,7 +24,7 @@ export const AddCategory = ({ onNewCategory }) => {
     };
 
     return (
-        <form onSubmit={onSubmit}>
+        <form className='search-bar' onSubmit={onSubmit}>
             <input
                 type="text"
                 value={inputValue}
