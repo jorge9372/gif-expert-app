@@ -7,7 +7,7 @@ exports[`Pruebas en <GetItem /> Debe hacer match con el snapshot 1`] = `
   >
     <img
       alt="Dragon Ball"
-      src="https://api.giphy.com"
+      src="https://api.giphy.com/dragonball.jpg"
     />
     <p>
       Dragon Ball
