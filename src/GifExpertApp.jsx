@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AddCategory, GifGrid} from './components';
+import { AddCategory, GifGrid } from './components';
 
 export const GifExpertApp = () => {
     const [categories, setCategories] = useState(['Rugby']);
@@ -7,6 +7,11 @@ export const GifExpertApp = () => {
     const onAddCategory = (newCategory) => {
         if (categories.includes(newCategory)) return;
         setCategories([newCategory, ...categories]);
+    };
+
+    //TODO: Implementar funcion para eliminar elemento
+    const onDelete = (category) => {
+        setCategories(categories.filter((element) => element !== category));
     };
 
     return (
@@ -17,6 +22,7 @@ export const GifExpertApp = () => {
 
             {categories.map((category) => (
                 <GifGrid
+                    onDelete={onDelete}
                     category={category}
                     key={category}
                 />

@@ -4,12 +4,15 @@ import { useFetchGifs } from '../hooks/useFetchGifs';
 
 import PropTypes from 'prop-types';
 
-export const GifGrid = ({ category }) => {
+export const GifGrid = ({ category, onDelete }) => {
     const { images, isLoading } = useFetchGifs(category);
 
     return (
         <>
-            <h3>{category}</h3>
+            <div className="card-grid-header">
+                <h2>{category}</h2>
+                <button onClick={() => {onDelete(category)}}>Eliminar</button>
+            </div>
             {isLoading && <h3>Cargando...</h3>}
             <div className="card-grid">
                 {images.map((image) => (
